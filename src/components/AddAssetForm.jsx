@@ -17,7 +17,7 @@ const AddAssetForm = ({ onClose }) => {
   const [coin, setCoin] = useState(null);
   const [isSubmit, setIsSubmit] = useState(false);
 
-  const { crypto } = useCrypto();
+  const { crypto, addAsset } = useCrypto();
 
   const [form] = Form.useForm();
 
@@ -66,6 +66,7 @@ const AddAssetForm = ({ onClose }) => {
     };
     assetRef.current = newAsset;
     setIsSubmit(true);
+    addAsset(newAsset);
   };
 
   const handleAmountChange = value => {
